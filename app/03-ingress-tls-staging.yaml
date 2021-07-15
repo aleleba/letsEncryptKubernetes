@@ -1,0 +1,41 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ingress
+  namespace: app
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    nginx.ingress.kubernetes.io/rewrite-target: /
+    nginx.ingress.kubernetes.io/use-regex: "true"
+    # add an annotation indicating the issuer to use.
+    cert-manager.io/cluster-issuer: letsencrypt-staging
+    acme.cert-manager.io/http01-edit-in-place: "true"
+    cert-manager.io/issue-temporary-certificate: "true"
+spec:
+  tls:
+    #colocar tus propios dominios
+    - hosts:
+      - p-lao.tk
+      - www.p-lao.tk
+      secretName: p-lao-lets-encrypt-staging-tls
+  rules:
+  - host: p-lao.tk
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: app-svc
+            port:
+              number: 8080
+  - host: www.p-lao.tk
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: app-svc
+            port:
+              number: 8080

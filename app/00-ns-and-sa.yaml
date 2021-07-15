@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  #colocar nombre del namespace de la app
+  name: app
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  #colocar nombre del serviceAccount
+  name: app
+  namespace: app

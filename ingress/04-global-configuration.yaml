@@ -1,0 +1,13 @@
+apiVersion: k8s.nginx.org/v1alpha1
+kind: GlobalConfiguration
+metadata:
+  name: nginx-configuration
+  namespace: nginx-ingress
+#spec:
+  #listener:
+  #- name: dns-tcp-http
+    #port: 80
+    #protocol: TCP
+  #- name: dns-tcp-https
+    #port: 443
+    #protocol: TCP

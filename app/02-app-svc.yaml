@@ -1,0 +1,14 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: app-svc
+  namespace: app
+spec:
+  selector:
+    app: app
+  type: ClusterIP
+  ports:
+  - protocol: TCP
+    name: app-main
+    port: 8080
+    targetPort: 8080

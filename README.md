@@ -71,5 +71,6 @@ Por último debes instalar la app web que tu hayas desarrollado y crear el enrut
 ## Espero les haya gustado la clase.
 Alejandro Lembke Barrientos
 
+[Video de Clase:](https://www.youtube.com/watch?v=b-pozEafkpU)
 
 

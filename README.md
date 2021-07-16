@@ -33,7 +33,7 @@ Luego hay que crear un cluster role binding de ngnix ingress controller:
 Luego Se instalan los Custom Resource Definitions de Ingres:
 
 Visualizar la carpeta:
-[./crds](./crds/)
+[./crds](./ingress/crds/)
 
 Por ultimo tienen que correr los archivos de configuración de ingress.
 

@@ -9,7 +9,7 @@ metadata:
     nginx.ingress.kubernetes.io/use-regex: "true"
 spec:
   rules:
-  - host: p-lao.com
+  - host: p-lao.tk
     http:
       paths:
       - path: /
@@ -19,7 +19,7 @@ spec:
             name: app-svc
             port:
               number: 8080
-  - host: www.p-lao.com
+  - host: www.p-lao.tk
     http:
       paths:
       - path: /

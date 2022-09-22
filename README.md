@@ -40,6 +40,19 @@ Por ultimo tienen que correr los archivos de configuración de ingress.
 Visualizar la carpeta:
 [./ingress](./ingress/)
 
+o instala ingress con helm con los comandos:
+Primero creamos el namespace de Ingress y su service account con el archivo:
+
+`kubectl apply -f ./ingress/01-ns-and-sa.yaml`
+
+Luego instalamos con helm con los siguientes comandos.
+
+`helm repo add nginx-stable https://helm.nginx.com/stable`
+
+`helm repo update`
+
+`helm install my-release nginx-stable/nginx-ingress --namespace nginx-ingress`
+
 ### Paso 2: Instalar Cert Manager
 En este caso es más rápido ya que usaremos helm para instalar Cert Manager.
 
@@ -53,7 +66,7 @@ Luego instalamos con helm con los siguientes comandos.
 
 `helm repo update`
 
-`helm install cert-manager jetstack/cert-manager --namespace cert-manager --version v1.2.0 --set installCRDs=true`
+`helm install cert-manager jetstack/cert-manager --namespace cert-manager --version v1.8.0 --set installCRDs=true --set webhook.securePort=10260`
 
 Este es un tip que nos va a servir adelante:
 comando para ver challenges:

@@ -51,7 +51,7 @@ Luego instalamos con helm con los siguientes comandos.
 
 `helm repo update`
 
-`helm install my-release nginx-stable/nginx-ingress --namespace nginx-ingress`
+`helm install nginx-ingress nginx-stable/nginx-ingress --namespace nginx-ingress`
 
 ### Paso 2: Instalar Cert Manager
 En este caso es más rápido ya que usaremos helm para instalar Cert Manager.
